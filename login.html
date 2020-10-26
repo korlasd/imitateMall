@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet"href="css/login.css" />
+		<script>
+			window.onload=function(){
+				var ul1=document.querySelectorAll(".div3_context_ul1 li")
+				var ul2=document.querySelectorAll(".div3_context_ul2 li")
+				ul1[0].style.color="red";
+				for(var i=1;i<ul2.length;i++){
+					ul2[i].style.display="none";
+				}
+				for(var j=0;j<ul1.length;j++){
+					
+					ul1[j].num=j;
+					
+					ul1[j].onclick=function(){
+						
+						for(var k=0;k<ul1.length;k++){
+							ul1[k].style.color="black";
+							ul2[k].style.display="none";
+							
+						}
+						this.style.color="red"
+						ul2[this.num].style.display="block";
+						
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1" id="div1">
+				
+			<div class="div1_context">
+				<a href="#">
+					<img src="threeImg/1.png"style="margin-top: 20px;" />
+				</a>
+				<span style="margin-left: 20px;font-size: 20px;font-weight: bold;">欢迎登录</span>
+				<span style="margin-left: 800px;">
+					<a class="aa" href="https://surveys.jd.com/index.php?r=survey/index/sid/568245/lang/zh-Hans">
+						登录页面，调查问卷
+					</a>
+					
+					</span>
+			</div>
+		</div>
+		<!-- Part2 -->
+		<div class="div2" id="div2">
+			<div class="div2_context">
+				<p style="color: #999999;margin-left: 100px;font-size: 12px;">依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 
+				新版<a style="color: black;text-decoration: none;" href="https://about.jd.com/privacy/" class="black" target="_blank">
+				《京东隐私政策》
+				</a>
+				已上线，将更有利于保护您的个人隐私。
+				</p>
+			</div>
+		</div>
+		<!-- Part3 -->
+		<div class="div3" id="div3">
+			<div class="div3_context">
+				<div class="div3_context_main">
+					<div class="div3_context_main_top">
+						<p style="font-size: 12px;">京东不会以任何理由要求您转账汇款，谨防诈骗。</p>
+					</div>
+					<div class="div3_context_main_middle">
+						<ul class="div3_context_ul1">
+							<li>
+								<span>扫码登录</span>
+							</li>
+							<li>
+								<span>账户登录</span>
+							</li>
+						</ul>
+					</div>
+					<!-- 页面切换 -->
+					<div class="div3_context_main_bottom">
+						<ul class="div3_context_ul2">
+							<li>
+								<div class="div3_context_ul2_li1">
+									<img src="threeImg/3.png" style="width: 140px;height: 140px;margin-left: 17.5px;margin-top: 2px;" />
+								</div>
+								<div class="div3_context_ul2_li2">
+									<span>
+										<a style="color: red;text-decoration: none;font-size: 12px;" href="#">打开手机京东</a>
+									</span>
+									<span style="font-size: 12px;margin-left: 20px;">扫描二维码</span>
+								</div>
+								
+								<div class="div3_context_ul2_li3">
+									<img src="threeImg/4.png"style="width: 190px;height: 30px;" />
+								</div>
+								<div class="div3_context_ul2_li4">
+									<span style="font-size: 12px;margin-left: 20px;">
+										<a href="#">QQ |</a>
+									</span>
+									<span>
+										<a style="font-size: 12px;" href="#"> 微信</a>
+									</span>
+									<span style="margin-left: 200px;">
+										<a style="font-size: 14px;color: red;" href="#"> 立即注册</a>
+									</span>
+								</div>
+							</li>
+							<li>
+								<div class="div3_context_ul2_li5">
+									<button style="flex: 10%;">
+										<img src="threeImg/5.png" />
+									</button>
+									<input style="flex: 90%;" type="text"placeholder="邮箱/用户名/登录手机"name="username" />
+								</div>
+								<div class="div3_context_ul2_li5"style="margin-top: 25px;">
+									<button style="flex: 10%;">
+										<img src="threeImg/6.png"style="width: 41px;height: 36px;" />
+									</button>
+									<input style="flex: 90%;" type="text"placeholder="密码"name="password" />
+								</div>
+								<br />
+								<p style="font-size: 10px;margin-left: 280px;">
+									<a href="#">
+										忘记密码
+									</a>
+									</p>
+								<div class="div3_context_ul2_li6">
+									<button style="flex: 1;color: white;background: red;border: 1px solid black;" type="submit">立即登录</button>
+								</div>
+								<div class="div3_context_ul2_li4"style="margin-top: 20px;">
+									<span style="font-size: 12px;margin-left: 20px;">
+										<a href="#">QQ |</a>
+									</span>
+									<span>
+										<a style="font-size: 12px;" href="#"> 微信</a>
+									</span>
+									<span style="margin-left: 200px;">
+										<a style="font-size: 14px;color: red;" href="#"> 立即注册</a>
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- Part4 -->
+		<div class="div4" id="div4">
+			<div class="div4_context">
+				<ul>
+					<li>
+						<a href="#">
+							关于我们  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							联系我们  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							人才招聘  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							商家入驻  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							关于我们  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							广告服务  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							手机京东  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							友情链接  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							销售联盟  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							京东社区  |
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							京东公益
+						</a>
+					</li>
+				</ul>
+		<div class="copyright">
+            Copyright&nbsp;©&nbsp;2004-2020&nbsp;&nbsp;京东JD.com&nbsp;版权所有
+        </div>
+			</div>
+		</div>
+	</body>
+</html>
