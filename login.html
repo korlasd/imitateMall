@@ -1,213 +1,178 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<link rel="stylesheet"href="css/login.css" />
-		<script>
-			window.onload=function(){
-				var ul1=document.querySelectorAll(".div3_context_ul1 li")
-				var ul2=document.querySelectorAll(".div3_context_ul2 li")
-				ul1[0].style.color="red";
-				for(var i=1;i<ul2.length;i++){
-					ul2[i].style.display="none";
-				}
-				for(var j=0;j<ul1.length;j++){
-					
-					ul1[j].num=j;
-					
-					ul1[j].onclick=function(){
-						
-						for(var k=0;k<ul1.length;k++){
-							ul1[k].style.color="black";
-							ul2[k].style.display="none";
-							
-						}
-						this.style.color="red"
-						ul2[this.num].style.display="block";
-						
-					}
-				}
-			}
-		</script>
-	</head>
-	<body>
-		<div class="div1" id="div1">
-				
-			<div class="div1_context">
-				<a href="#">
-					<img src="threeImg/1.png"style="margin-top: 20px;" />
-				</a>
-				<span style="margin-left: 20px;font-size: 20px;font-weight: bold;">欢迎登录</span>
-				<span style="margin-left: 800px;">
-					<a class="aa" href="https://surveys.jd.com/index.php?r=survey/index/sid/568245/lang/zh-Hans">
-						登录页面，调查问卷
-					</a>
-					
-					</span>
-			</div>
-		</div>
-		<!-- Part2 -->
-		<div class="div2" id="div2">
-			<div class="div2_context">
-				<p style="color: #999999;margin-left: 100px;font-size: 12px;">依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 
-				新版<a style="color: black;text-decoration: none;" href="https://about.jd.com/privacy/" class="black" target="_blank">
-				《京东隐私政策》
-				</a>
-				已上线，将更有利于保护您的个人隐私。
-				</p>
-			</div>
-		</div>
-		<!-- Part3 -->
-		<div class="div3" id="div3">
-			<div class="div3_context">
-				<div class="div3_context_main">
-					<div class="div3_context_main_top">
-						<p style="font-size: 12px;">京东不会以任何理由要求您转账汇款，谨防诈骗。</p>
-					</div>
-					<div class="div3_context_main_middle">
-						<ul class="div3_context_ul1">
-							<li>
-								<span>扫码登录</span>
-							</li>
-							<li>
-								<span>账户登录</span>
-							</li>
-						</ul>
-					</div>
-					<!-- 页面切换 -->
-					<div class="div3_context_main_bottom">
-						<ul class="div3_context_ul2">
-							<li>
-								<div class="div3_context_ul2_li1">
-									<img src="threeImg/3.png" style="width: 140px;height: 140px;margin-left: 17.5px;margin-top: 2px;" />
-								</div>
-								<div class="div3_context_ul2_li2">
-									<span>
-										<a style="color: red;text-decoration: none;font-size: 12px;" href="#">打开手机京东</a>
-									</span>
-									<span style="font-size: 12px;margin-left: 20px;">扫描二维码</span>
-								</div>
-								
-								<div class="div3_context_ul2_li3">
-									<img src="threeImg/4.png"style="width: 190px;height: 30px;" />
-								</div>
-								<div class="div3_context_ul2_li4">
-									<span style="font-size: 12px;margin-left: 20px;">
-										<a href="#">QQ |</a>
-									</span>
-									<span>
-										<a style="font-size: 12px;" href="#"> 微信</a>
-									</span>
-									<span style="margin-left: 200px;">
-										<a style="font-size: 14px;color: red;" href="#"> 立即注册</a>
-									</span>
-								</div>
-							</li>
-							<li>
-								<div class="div3_context_ul2_li5">
-									<button style="flex: 10%;">
-										<img src="threeImg/5.png" />
-									</button>
-									<input style="flex: 90%;" type="text"placeholder="邮箱/用户名/登录手机"name="username" />
-								</div>
-								<div class="div3_context_ul2_li5"style="margin-top: 25px;">
-									<button style="flex: 10%;">
-										<img src="threeImg/6.png"style="width: 41px;height: 36px;" />
-									</button>
-									<input style="flex: 90%;" type="text"placeholder="密码"name="password" />
-								</div>
-								<br />
-								<p style="font-size: 10px;margin-left: 280px;">
-									<a href="#">
-										忘记密码
-									</a>
-									</p>
-								<div class="div3_context_ul2_li6">
-									<button style="flex: 1;color: white;background: red;border: 1px solid black;" type="submit">立即登录</button>
-								</div>
-								<div class="div3_context_ul2_li4"style="margin-top: 20px;">
-									<span style="font-size: 12px;margin-left: 20px;">
-										<a href="#">QQ |</a>
-									</span>
-									<span>
-										<a style="font-size: 12px;" href="#"> 微信</a>
-									</span>
-									<span style="margin-left: 200px;">
-										<a style="font-size: 14px;color: red;" href="#"> 立即注册</a>
-									</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-		<!-- Part4 -->
-		<div class="div4" id="div4">
-			<div class="div4_context">
-				<ul>
-					<li>
-						<a href="#">
-							关于我们  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							联系我们  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							人才招聘  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							商家入驻  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							关于我们  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							广告服务  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							手机京东  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							友情链接  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							销售联盟  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							京东社区  |
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							京东公益
-						</a>
-					</li>
-				</ul>
-		<div class="copyright">
-            Copyright&nbsp;©&nbsp;2004-2020&nbsp;&nbsp;京东JD.com&nbsp;版权所有
-        </div>
-			</div>
-		</div>
-	</body>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e1251b" />
+    <title>登录 — 京选商城</title>
+    <meta
+      name="description"
+      content="京选商城登录页仿站作品：扫码登录与账户登录双模式，含表单校验与密码可见性切换。"
+    />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/views/login.css" />
+  </head>
+  <body class="login-page">
+    <header class="login-header">
+      <div class="container login-header__inner">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">JD</span>
+          <span class="brand__text">
+            <span class="brand__name">京选商城</span>
+            <span class="brand__slogan">JINGXUAN MALL</span>
+          </span>
+        </a>
+        <a class="login-header__help" href="index.html">返回首页</a>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <div class="login-card">
+        <aside class="login-brand" aria-label="会员权益">
+          <p class="login-brand__eyebrow">JINGXUAN MALL</p>
+          <h1 class="login-brand__title">登录京选<br />享会员专属价格</h1>
+          <p class="login-brand__desc">
+            依据《网络安全法》要求，为保障账户安全，请完成手机号验证后再登录使用。
+          </p>
+          <ul class="login-brand__points">
+            <li><span data-icon="check"></span>PLUS 会员日额外 95 折</li>
+            <li><span data-icon="check"></span>专属客服与极速退款</li>
+            <li><span data-icon="check"></span>价保自动补差，省心无忧</li>
+          </ul>
+          <div class="login-brand__qr">
+            <img src="threeImg/3.png" alt="京选商城 App 下载二维码" width="92" height="92" />
+            <p class="login-brand__qr-text">
+              <strong>扫码下载 App</strong>
+              新人首单立减 10 元
+            </p>
+          </div>
+        </aside>
+
+        <section class="login-form" aria-label="登录表单">
+          <div class="login-tabs" role="tablist" aria-label="登录方式">
+            <button
+              type="button"
+              class="login-tab is-active"
+              role="tab"
+              id="tab-qr"
+              aria-selected="true"
+              aria-controls="panel-qr"
+              data-tab="qr"
+            >
+              扫码登录
+            </button>
+            <button
+              type="button"
+              class="login-tab"
+              role="tab"
+              id="tab-account"
+              aria-selected="false"
+              aria-controls="panel-account"
+              data-tab="account"
+            >
+              账户登录
+            </button>
+          </div>
+
+          <!-- 扫码登录 -->
+          <div
+            class="login-panel"
+            id="panel-qr"
+            role="tabpanel"
+            aria-labelledby="tab-qr"
+            data-panel="qr"
+          >
+            <div class="qr-panel">
+              <div class="qr-frame">
+                <img src="threeImg/3.png" alt="扫码登录二维码" width="180" height="180" />
+              </div>
+              <p class="qr-tip">打开 <strong>手机京选</strong> 扫一扫</p>
+              <p class="qr-tip text-sm">扫码成功后请在手机端确认登录</p>
+            </div>
+          </div>
+
+          <!-- 账户登录 -->
+          <form
+            class="login-panel"
+            id="panel-account"
+            role="tabpanel"
+            aria-labelledby="tab-account"
+            data-panel="account"
+            data-login-form
+            novalidate
+            hidden
+          >
+            <div class="field" data-field="account">
+              <label class="field__label" for="login-account">账号</label>
+              <div class="field__control">
+                <span class="field__icon" data-icon="user"></span>
+                <input
+                  id="login-account"
+                  name="account"
+                  type="text"
+                  placeholder="邮箱 / 用户名 / 手机号"
+                  autocomplete="username"
+                />
+              </div>
+              <p class="field__error" data-error-for="account"></p>
+            </div>
+
+            <div class="field" data-field="password">
+              <label class="field__label" for="login-password">密码</label>
+              <div class="field__control">
+                <span class="field__icon" data-icon="lock"></span>
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  placeholder="请输入登录密码"
+                  autocomplete="current-password"
+                />
+                <button type="button" class="field__toggle" data-toggle-password>
+                  显示
+                </button>
+              </div>
+              <p class="field__error" data-error-for="password"></p>
+            </div>
+
+            <div class="login-form__row">
+              <label class="checkbox">
+                <input type="checkbox" name="remember" checked />
+                记住登录状态
+              </label>
+              <a class="login-form__link" href="#">忘记密码？</a>
+            </div>
+
+            <button class="btn btn--primary btn--block login-form__submit" type="submit">
+              立即登录
+            </button>
+
+            <div class="login-form__divider">其他方式登录</div>
+
+            <div class="login-form__oauth">
+              <button type="button" class="oauth-btn" data-oauth="QQ">QQ</button>
+              <button type="button" class="oauth-btn" data-oauth="微信">微信</button>
+              <button type="button" class="oauth-btn" data-oauth="企业账号">
+                企业账号
+              </button>
+            </div>
+
+            <p class="login-form__legal">
+              登录即表示同意
+              <a href="#">《用户协议》</a>
+              与
+              <a href="#">《隐私政策》</a>
+              。本页面为学习用途的仿站作品，不收集任何真实账号信息。
+            </p>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script src="assets/js/core.js"></script>
+    <script src="assets/js/markup.js"></script>
+    <script src="assets/js/views/login.js"></script>
+  </body>
 </html>

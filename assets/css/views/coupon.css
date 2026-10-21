@@ -1,0 +1,325 @@
+/* ==========================================================================
+   views/coupon.css — 优惠券页
+   ========================================================================== */
+
+.coupon-hero {
+  margin-top: 16px;
+  padding: 30px 36px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(115deg, #fff4f2, #ffe3df 60%, #fff4f2);
+  border: 1px solid #ffe0db;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.coupon-hero__title {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #7d1f19;
+}
+
+.coupon-hero__desc {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #9a4a43;
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+.coupon-hero__stats {
+  margin-left: auto;
+  display: flex;
+  gap: 28px;
+  flex: none;
+}
+
+.stat__num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.stat__label {
+  font-size: 12px;
+  color: #9a4a43;
+  margin-top: 2px;
+}
+
+@media (max-width: 780px) {
+  .coupon-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .coupon-hero__stats {
+    margin-left: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   筛选栏
+   -------------------------------------------------------------------------- */
+.coupon-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.coupon-filter__label {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.coupon-filter__count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--ink-4);
+}
+
+/* --------------------------------------------------------------------------
+   券卡（票券造型）
+   -------------------------------------------------------------------------- */
+.coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.coupon {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+
+.coupon:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+.coupon.is-used {
+  opacity: 0.55;
+}
+
+.coupon__amount {
+  position: relative;
+  flex: none;
+  width: 116px;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: linear-gradient(160deg, #ff6b5e, var(--brand) 60%, var(--brand-dark));
+  color: #fff;
+  text-align: center;
+}
+
+.coupon__amount::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background-image: radial-gradient(
+    circle at 6px center,
+    transparent 5px,
+    var(--surface) 5.5px
+  );
+  background-size: 12px 14px;
+  background-repeat: repeat-y;
+}
+
+.coupon__value {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  font-variant-numeric: tabular-nums;
+}
+
+.coupon__value-symbol {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.coupon__value-num {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.coupon__value-unit {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.coupon__threshold {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.coupon__body {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coupon__type {
+  align-self: flex-start;
+}
+
+.coupon__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coupon__meta {
+  font-size: 12px;
+  color: var(--ink-4);
+  line-height: 1.6;
+}
+
+.coupon__foot {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coupon__expire {
+  font-size: 11px;
+  color: var(--ink-4);
+  font-variant-numeric: tabular-nums;
+}
+
+.coupon__action {
+  margin-left: auto;
+  height: 30px;
+  padding-inline: 16px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 700;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.coupon__action:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+.coupon.is-used .coupon__action {
+  background: var(--surface-2);
+  color: var(--ink-4);
+  cursor: not-allowed;
+}
+
+.coupon.is-used .coupon__amount {
+  background: linear-gradient(160deg, #b9c0ca, #98a2b3);
+}
+
+@media (max-width: 1100px) {
+  .coupon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .coupon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   使用说明
+   -------------------------------------------------------------------------- */
+.howto {
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.howto__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.howto__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.howto__step {
+  position: relative;
+  padding-left: 34px;
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.8;
+}
+
+.howto__step strong {
+  display: block;
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.howto__step-no {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 860px) {
+  .howto__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .howto__steps {
+    grid-template-columns: 1fr;
+  }
+}

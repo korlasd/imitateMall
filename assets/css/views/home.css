@@ -1,0 +1,426 @@
+/* ==========================================================================
+   views/home.css — 首页专属布局
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   主视觉区
+   -------------------------------------------------------------------------- */
+/*
+   注意：此处不能用 .carousel { height: 100% }。
+   主视觉列的高度由 grid 行高（三列取最高）决定，若轮播再写 height:100%，
+   会形成高度自引用，导致其后的 .banner-row 溢出到 hero 之外并压住下方区块。
+   改用弹性列：轮播 flex:1 占满剩余空间，banner 行始终留在列内。
+*/
+.hero__main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.hero .carousel {
+  flex: 1 1 auto;
+  min-height: 380px;
+}
+
+@media (max-width: 1180px) {
+  .hero .carousel {
+    min-height: 340px;
+  }
+}
+
+.hero__aside {
+  min-width: 0;
+}
+
+/* 中部轮播下方的促销卡行 */
+.banner-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.banner-row__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 108px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.banner-row__item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+.banner-row__item::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  bottom: -36px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.08;
+}
+
+.banner-row__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  opacity: 0.62;
+}
+
+.banner-row__title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.banner-row__desc {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.banner-row__cta {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.banner-row__item--gold {
+  background: linear-gradient(150deg, #fff6e5, #ffe7bd);
+  border-color: #ffe0ae;
+  color: #8a5200;
+}
+
+.banner-row__item--ink {
+  background: linear-gradient(150deg, #f1f4f9, #e2e8f2);
+  border-color: #dbe3ef;
+  color: #2c3a4e;
+}
+
+.banner-row__item--jade {
+  background: linear-gradient(150deg, #e9faf4, #cdf2e5);
+  border-color: #bdebd9;
+  color: #0b6b53;
+}
+
+@media (max-width: 620px) {
+  .banner-row {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-row__item {
+    min-height: 92px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   秒杀专区
+   -------------------------------------------------------------------------- */
+.flash {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+}
+
+.flash__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: linear-gradient(120deg, #2b1311, #521a16 60%, #2b1311);
+  color: #fff;
+}
+
+.flash__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.flash__title strong {
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+
+.flash__title span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.flash__timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.flash__more {
+  flex: none;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.flash__more:hover {
+  color: #fff;
+}
+
+.flash__body {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+
+.flash__item {
+  background: var(--surface);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.flash__item:hover {
+  background: var(--brand-soft);
+}
+
+.flash__item .product__media {
+  border-radius: var(--radius-sm);
+}
+
+.flash__item-name {
+  font-size: 13px;
+  color: var(--ink-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 39px;
+}
+
+.flash__item:hover .flash__item-name {
+  color: var(--brand);
+}
+
+.flash__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .flash__body {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .flash__body > :nth-child(n + 9) {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .flash__body {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .flash__body > :nth-child(n + 7) {
+    display: none;
+  }
+
+  .flash__title span,
+  .flash__timer-label {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .flash__body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flash__body > :nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   分类楼层
+   -------------------------------------------------------------------------- */
+.floor {
+  margin-top: 32px;
+}
+
+.floor__head {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.floor__title {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.floor__desc {
+  font-size: 13px;
+  color: var(--ink-4);
+  padding-bottom: 2px;
+}
+
+.floor__tabs {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.floor__tab {
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  color: var(--ink-3);
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.floor__tab:hover {
+  color: var(--brand);
+}
+
+.floor__tab.is-active {
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.floor__grid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.floor__feature {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(160deg, #ffe9e6, #ffd3cd);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.floor__feature-title {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.floor__feature-desc {
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-top: 4px;
+}
+
+.floor__feature-img {
+  margin-top: 14px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.floor__feature-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+  .floor__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .floor__feature {
+    min-height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .floor__feature-img {
+    width: 180px;
+    margin-top: 0;
+    flex: none;
+    order: -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .floor__feature-img {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   品牌墙
+   -------------------------------------------------------------------------- */
+.brandwall {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.brandwall__item {
+  background: var(--surface);
+  aspect-ratio: 3 / 1;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  color: var(--ink-3);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.brandwall__item:hover {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+@media (max-width: 860px) {
+  .brandwall {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .brandwall {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

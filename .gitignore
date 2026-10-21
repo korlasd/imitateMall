@@ -1,0 +1,17 @@
+# 操作系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# 依赖与构建产物（本仓库当前无构建链，预留）
+node_modules/
+dist/
+
+# 日志与临时文件
+*.log
+*.tmp
+
+# 本地协作工具的工作记录（不属于源码）
+.workbuddy/
